@@ -8,5 +8,13 @@
 import Foundation
 
 class FeedViewModel {
+    private let albumService: AlbumService
     
+    init(albumService: AlbumService) {
+        self.albumService = albumService
+    }
+    
+    func getAlbums(completion: @escaping (Result<[Album]>) -> Void) {
+        albumService.execute(completion: completion)
+    }
 }

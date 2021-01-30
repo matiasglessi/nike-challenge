@@ -16,7 +16,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let feedViewModel = FeedViewModel()
+        let feedViewModel = FeedViewModel(albumService: AlbumServiceDefault())
         let feedViewController = FeedViewController(viewModel: feedViewModel)
         navigationController.pushViewController(feedViewController, animated: true)
     }

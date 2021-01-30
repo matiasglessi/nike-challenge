@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6070824925C57ABE0065FB42 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */; };
+		6070824F25C57DD70065FB42 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070824E25C57DD70065FB42 /* AlbumService.swift */; };
+		6070825F25C57E250065FB42 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070825E25C57E250065FB42 /* Album.swift */; };
+		6070826425C580960065FB42 /* AlbumServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070826325C580960065FB42 /* AlbumServiceMock.swift */; };
+		6070826F25C581D50065FB42 /* ios-nike-challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070826E25C581D50065FB42 /* ios-nike-challengeUITests.swift */; };
+		6070827725C5AFEA0065FB42 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070827625C5AFEA0065FB42 /* Result.swift */; };
+		6070827C25C5B2BE0065FB42 /* AlbumServiceDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070827B25C5B2BE0065FB42 /* AlbumServiceDefault.swift */; };
+		6070828125C5B2F80065FB42 /* AlbumServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070828025C5B2F80065FB42 /* AlbumServiceTests.swift */; };
 		6090866925C484E800AC64C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090866825C484E800AC64C0 /* AppDelegate.swift */; };
 		6090866B25C484E800AC64C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090866A25C484E800AC64C0 /* SceneDelegate.swift */; };
 		6090867225C484EA00AC64C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6090867125C484EA00AC64C0 /* Assets.xcassets */; };
 		6090867525C484EA00AC64C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6090867325C484EA00AC64C0 /* LaunchScreen.storyboard */; };
-		6090868025C484EA00AC64C0 /* ios_nike_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090867F25C484EA00AC64C0 /* ios_nike_challengeTests.swift */; };
-		6090868B25C484EB00AC64C0 /* ios_nike_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090868A25C484EB00AC64C0 /* ios_nike_challengeUITests.swift */; };
 		609086A225C4A15300AC64C0 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609086A125C4A15300AC64C0 /* FeedViewController.swift */; };
 		609086B125C4A40400AC64C0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609086B025C4A40400AC64C0 /* Coordinator.swift */; };
 		609086B625C4A82100AC64C0 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609086B525C4A82100AC64C0 /* FeedViewModel.swift */; };
@@ -37,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
+		6070824E25C57DD70065FB42 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		6070825E25C57E250065FB42 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		6070826325C580960065FB42 /* AlbumServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumServiceMock.swift; sourceTree = "<group>"; };
+		6070826E25C581D50065FB42 /* ios-nike-challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ios-nike-challengeUITests.swift"; sourceTree = "<group>"; };
+		6070827625C5AFEA0065FB42 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6070827B25C5B2BE0065FB42 /* AlbumServiceDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumServiceDefault.swift; sourceTree = "<group>"; };
+		6070828025C5B2F80065FB42 /* AlbumServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumServiceTests.swift; sourceTree = "<group>"; };
 		6090866525C484E800AC64C0 /* ios-nike-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-nike-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6090866825C484E800AC64C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6090866A25C484E800AC64C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,10 +58,8 @@
 		6090867425C484EA00AC64C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6090867625C484EA00AC64C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6090867B25C484EA00AC64C0 /* ios-nike-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-nike-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6090867F25C484EA00AC64C0 /* ios_nike_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_nike_challengeTests.swift; sourceTree = "<group>"; };
 		6090868125C484EB00AC64C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6090868625C484EB00AC64C0 /* ios-nike-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-nike-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6090868A25C484EB00AC64C0 /* ios_nike_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_nike_challengeUITests.swift; sourceTree = "<group>"; };
 		6090868C25C484EB00AC64C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		609086A125C4A15300AC64C0 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		609086B025C4A40400AC64C0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -80,6 +92,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6070824D25C57D980065FB42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6070824E25C57DD70065FB42 /* AlbumService.swift */,
+				6070827B25C5B2BE0065FB42 /* AlbumServiceDefault.swift */,
+				6070825E25C57E250065FB42 /* Album.swift */,
+				6070827625C5AFEA0065FB42 /* Result.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6090865C25C484E800AC64C0 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +130,7 @@
 				6090866A25C484E800AC64C0 /* SceneDelegate.swift */,
 				609086BA25C4AB3F00AC64C0 /* Shared */,
 				609086AC25C4A3DE00AC64C0 /* Presentation */,
+				6070824D25C57D980065FB42 /* Model */,
 				6090867125C484EA00AC64C0 /* Assets.xcassets */,
 				6090867325C484EA00AC64C0 /* LaunchScreen.storyboard */,
 				6090867625C484EA00AC64C0 /* Info.plist */,
@@ -117,8 +141,10 @@
 		6090867E25C484EA00AC64C0 /* ios-nike-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				6090867F25C484EA00AC64C0 /* ios_nike_challengeTests.swift */,
 				6090868125C484EB00AC64C0 /* Info.plist */,
+				6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */,
+				6070828025C5B2F80065FB42 /* AlbumServiceTests.swift */,
+				6070826325C580960065FB42 /* AlbumServiceMock.swift */,
 			);
 			path = "ios-nike-challengeTests";
 			sourceTree = "<group>";
@@ -126,8 +152,8 @@
 		6090868925C484EB00AC64C0 /* ios-nike-challengeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6090868A25C484EB00AC64C0 /* ios_nike_challengeUITests.swift */,
 				6090868C25C484EB00AC64C0 /* Info.plist */,
+				6070826E25C581D50065FB42 /* ios-nike-challengeUITests.swift */,
 			);
 			path = "ios-nike-challengeUITests";
 			sourceTree = "<group>";
@@ -224,6 +250,7 @@
 					};
 					6090868525C484EB00AC64C0 = {
 						CreatedOnToolsVersion = 12.1.1;
+						LastSwiftMigration = 1210;
 						TestTargetID = 6090866425C484E800AC64C0;
 					};
 				};
@@ -279,12 +306,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6070827725C5AFEA0065FB42 /* Result.swift in Sources */,
+				6070827C25C5B2BE0065FB42 /* AlbumServiceDefault.swift in Sources */,
 				609086BF25C4AB5A00AC64C0 /* AppCoordinator.swift in Sources */,
 				609086B625C4A82100AC64C0 /* FeedViewModel.swift in Sources */,
 				609086B125C4A40400AC64C0 /* Coordinator.swift in Sources */,
+				6070824F25C57DD70065FB42 /* AlbumService.swift in Sources */,
 				609086A225C4A15300AC64C0 /* FeedViewController.swift in Sources */,
 				6090866925C484E800AC64C0 /* AppDelegate.swift in Sources */,
 				6090866B25C484E800AC64C0 /* SceneDelegate.swift in Sources */,
+				6070825F25C57E250065FB42 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6090868025C484EA00AC64C0 /* ios_nike_challengeTests.swift in Sources */,
+				6070824925C57ABE0065FB42 /* FeedViewModelTests.swift in Sources */,
+				6070828125C5B2F80065FB42 /* AlbumServiceTests.swift in Sources */,
+				6070826425C580960065FB42 /* AlbumServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6090868B25C484EB00AC64C0 /* ios_nike_challengeUITests.swift in Sources */,
+				6070826F25C581D50065FB42 /* ios-nike-challengeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LZ4ZUBQFZ;
 				INFOPLIST_FILE = "ios-nike-challengeUITests/Info.plist";
@@ -543,6 +577,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "matiasglessi.ios-nike-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "ios-nike-challenge";
@@ -553,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9LZ4ZUBQFZ;
 				INFOPLIST_FILE = "ios-nike-challengeUITests/Info.plist";

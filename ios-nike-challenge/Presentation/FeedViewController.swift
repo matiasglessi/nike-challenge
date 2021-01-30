@@ -22,6 +22,9 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        viewModel.getAlbums { _ in
+         
+        }
     }
 
     private func setupTableView() {
