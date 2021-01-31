@@ -16,7 +16,10 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let feedViewModel = FeedViewModel(albumService: AlbumServiceDefault())
+        
+        let apiClient = URLSessionAPIClient.init(mapper: AlbumMapper())
+        
+        let feedViewModel = FeedViewModel(albumService: AlbumServiceDefault(apiClient: apiClient))
         let feedViewController = FeedViewController(viewModel: feedViewModel)
         navigationController.pushViewController(feedViewController, animated: true)
     }

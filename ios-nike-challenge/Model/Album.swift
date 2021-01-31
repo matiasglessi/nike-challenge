@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct Album {
+struct Album: Equatable {
     let name: String
     let artist: String
     let albumArt: String
     let genres: [String]
-    let releaseDate: Date
+    let releaseDate: String
     let copyrightInfo: String
     let itunesLink: String
 }

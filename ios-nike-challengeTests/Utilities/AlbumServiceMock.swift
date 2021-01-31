@@ -11,7 +11,7 @@ import UIKit
 class AlbumServiceMock: AlbumService {
     
     private var isServiceCalled = false
-    private let albums = [Album(name: "White Album", artist: "The Beatles", albumArt: "http://album-art-url.com", genres: ["Rock"], releaseDate: Date(), copyrightInfo: "", itunesLink: "http://itunes-url.com")]
+    private let albums = [Album(name: "White Album", artist: "The Beatles", albumArt: "http://album-art-url.com", genres: ["Rock"], releaseDate: "2020-12-10", copyrightInfo: "", itunesLink: "http://itunes-url.com")]
     
     func execute(completion: @escaping (Result<[Album]>) -> Void) {
         isServiceCalled = true
