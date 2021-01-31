@@ -19,7 +19,7 @@ class AppCoordinator: Coordinator {
         
         let apiClient = URLSessionAPIClient.init(mapper: AlbumMapper())
         
-        let feedViewModel = FeedViewModel(albumService: AlbumServiceDefault(apiClient: apiClient))
+        let feedViewModel = FeedViewModel(albumService: DefaultAlbumService(apiClient: apiClient))
         let feedViewController = FeedViewController(viewModel: feedViewModel)
         navigationController.pushViewController(feedViewController, animated: true)
     }

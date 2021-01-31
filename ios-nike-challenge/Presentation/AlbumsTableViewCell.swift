@@ -80,14 +80,14 @@ class AlbumsTableViewCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.albumCellViewModel = AlbumCellViewModel(getAlbumArt: GetAlbumArtServiceDefault(apiClient: URLSessionAPIClient()))
+        self.albumCellViewModel = AlbumCellViewModel(getAlbumArt: DefaultGetAlbumArtService(apiClient: URLSessionAPIClient()))
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCellUI()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.albumCellViewModel = AlbumCellViewModel(getAlbumArt: GetAlbumArtServiceDefault(apiClient: URLSessionAPIClient()))
+        self.albumCellViewModel = AlbumCellViewModel(getAlbumArt: DefaultGetAlbumArtService(apiClient: URLSessionAPIClient()))
         super.init(coder: aDecoder)
 
     }

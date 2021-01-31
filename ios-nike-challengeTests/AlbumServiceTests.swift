@@ -14,7 +14,7 @@ class AlbumServiceTests: XCTestCase {
     
     func test_onServiceExecutionWithSuccess_ThenReturnsSuccessfulResult() {
         apiClient.albumsResult = .success([])
-        let albumService = AlbumServiceDefault(apiClient: apiClient)
+        let albumService = DefaultAlbumService(apiClient: apiClient)
         albumService.execute { (result) in
             switch result {
             case .success(let albums):
@@ -28,7 +28,7 @@ class AlbumServiceTests: XCTestCase {
     
     func test_onServiceExecutionWithRandomFailure_ThenReturnsFailurefulResult() {
         apiClient.albumsResult = .failure(getRandomFailure())
-        let albumService = AlbumServiceDefault(apiClient: apiClient)
+        let albumService = DefaultAlbumService(apiClient: apiClient)
         albumService.execute { (result) in
             switch result {
             case .success(_):

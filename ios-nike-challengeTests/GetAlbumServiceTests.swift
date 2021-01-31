@@ -49,7 +49,7 @@ class GetAlbumServiceTests: XCTestCase {
     }
     
     private func getAlbumService() -> GetAlbumArtService {
-        return GetAlbumArtServiceDefault(apiClient: apiClient, imageCache: imageCache)
+        return DefaultGetAlbumArtService(apiClient: apiClient, imageCache: imageCache)
     }
     
     private func getRandomFailure() -> APIClientError {
