@@ -13,20 +13,13 @@ class FeedViewModelTests: XCTestCase {
     
     func test_onGetAlbums_callsAlbumService() {
         
-        let sut = FeedViewModel(albumService: albumService)
-        sut.getAlbums(completion: { [weak self] result in
-            
+        let feedViewModel = FeedViewModel(albumService: albumService)
+        
+        feedViewModel.getAlbums { [weak self] _ in
             guard let strongSelf = self else { return }
-            
-            XCTAssert(strongSelf.albumService.isCalled())
 
-            switch result {
-            case .success(let albums):
-                XCTAssertEqual(albums.count, 1)
-            case .failure(_):
-                XCTFail()
-            }
-        })
+            XCTAssert(strongSelf.albumService.isCalled())
+        }
     }
 }
 

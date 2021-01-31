@@ -25,6 +25,7 @@
 		607082C225C6E4C70065FB42 /* AlbumMapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607082C125C6E4C70065FB42 /* AlbumMapperMock.swift */; };
 		607082C725C6E5030065FB42 /* AlbumMother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607082C625C6E5030065FB42 /* AlbumMother.swift */; };
 		607082CC25C6EA380065FB42 /* AlbumMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607082CB25C6EA380065FB42 /* AlbumMapper.swift */; };
+		607082D125C6FBAF0065FB42 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607082D025C6FBAF0065FB42 /* AlbumsTableViewCell.swift */; };
 		6090866925C484E800AC64C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090866825C484E800AC64C0 /* AppDelegate.swift */; };
 		6090866B25C484E800AC64C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6090866A25C484E800AC64C0 /* SceneDelegate.swift */; };
 		6090867225C484EA00AC64C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6090867125C484EA00AC64C0 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		607082C125C6E4C70065FB42 /* AlbumMapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapperMock.swift; sourceTree = "<group>"; };
 		607082C625C6E5030065FB42 /* AlbumMother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMother.swift; sourceTree = "<group>"; };
 		607082CB25C6EA380065FB42 /* AlbumMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapper.swift; sourceTree = "<group>"; };
+		607082D025C6FBAF0065FB42 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		6090866525C484E800AC64C0 /* ios-nike-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-nike-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6090866825C484E800AC64C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6090866A25C484E800AC64C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				609086A125C4A15300AC64C0 /* FeedViewController.swift */,
+				607082D025C6FBAF0065FB42 /* AlbumsTableViewCell.swift */,
 				609086B525C4A82100AC64C0 /* FeedViewModel.swift */,
 			);
 			path = Presentation;
@@ -363,6 +366,7 @@
 				6070829725C5BAC10065FB42 /* Session.swift in Sources */,
 				6070828625C5B92D0065FB42 /* APIClient.swift in Sources */,
 				609086A225C4A15300AC64C0 /* FeedViewController.swift in Sources */,
+				607082D125C6FBAF0065FB42 /* AlbumsTableViewCell.swift in Sources */,
 				607082CC25C6EA380065FB42 /* AlbumMapper.swift in Sources */,
 				6090866925C484E800AC64C0 /* AppDelegate.swift in Sources */,
 				6090866B25C484E800AC64C0 /* SceneDelegate.swift in Sources */,

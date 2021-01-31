@@ -14,7 +14,14 @@ class FeedViewModel {
         self.albumService = albumService
     }
     
-    func getAlbums(completion: @escaping (Result<[Album]>) -> Void) {
-        albumService.execute(completion: completion)
+    func getAlbums(completion: @escaping ([Album]) -> Void) {
+        albumService.execute { (result) in
+            switch result  {
+            case .success(let albums):
+                completion(albums)
+            case .failure(let error):
+                fatalError("Must implement error case!")
+            }
+        }
     }
 }
