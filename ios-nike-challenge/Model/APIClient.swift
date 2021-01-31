@@ -9,4 +9,6 @@ import UIKit
 
 protocol APIClient {
     func get(from url: URL?, completion: @escaping (Result<[Album]>) -> Void)
+    func download(from url: URL?, completion: @escaping (Result<AlbumArt?>) -> Void)
+
 }

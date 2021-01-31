@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum APIClientError: Error, Equatable, CaseIterable {
     case missingData
@@ -18,7 +19,7 @@ class URLSessionAPIClient: APIClient {
     private let session: Session
     private let mapper: Mapper
     
-    init(session: Session = URLSession.shared, mapper: Mapper) {
+    init(session: Session = URLSession.shared, mapper: Mapper = AlbumMapper()) {
         self.session = session
         self.mapper = mapper
     }
@@ -57,6 +58,27 @@ class URLSessionAPIClient: APIClient {
             } catch {
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func download(from url: URL?, completion: @escaping (Result<AlbumArt?>) -> Void) {
+       
+        guard let url = url else {
+            completion(.failure(APIClientError.invalidURL))
+            return
+        }
+
+        session.loadData(from: url) { (data, response, error) in
+            guard
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else {
+                completion(.failure(APIClientError.unknown))
+                return
+            }
+            
+            completion(.success(image))
         }
     }
 }

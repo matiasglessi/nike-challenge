@@ -11,9 +11,15 @@ import UIKit
 
 class APIClientMock: APIClient {
     
-    var result: Result<[Album]> = .success([])
+    var albumsResult: Result<[Album]> = .success([])
+    var albumArtResult: Result<AlbumArt?> = .success(UIImage(systemName: "x.square.fill"))
 
     func get(from url: URL?, completion: @escaping (Result<[Album]>) -> Void) {
-        completion(result)
+        completion(albumsResult)
     }
+    
+    func download(from url: URL?, completion: @escaping (Result<AlbumArt?>) -> Void) {
+        completion(albumArtResult)
+    }
+    
 }

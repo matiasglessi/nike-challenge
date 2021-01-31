@@ -8,11 +8,13 @@
 import UIKit
 
 class AlbumsTableViewCell: UITableViewCell {
-        
+    
+    private var albumCellViewModel: AlbumCellViewModel!
+    
     var album: Album? {
         didSet {
-            guard let album = album else {return}
-            albumArtImageView.image = UIImage(systemName: "x.square.fill")
+            guard let album = album else { return }
+            getAlbumArt(from: album.albumArt)
             albumNameLabel.text = album.name
             artistNameLabel.text = album.artist
         }
@@ -78,13 +80,23 @@ class AlbumsTableViewCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        self.albumCellViewModel = AlbumCellViewModel(getAlbumArt: GetAlbumArtServiceDefault(apiClient: URLSessionAPIClient()))
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCellUI()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.albumCellViewModel = AlbumCellViewModel(getAlbumArt: GetAlbumArtServiceDefault(apiClient: URLSessionAPIClient()))
         super.init(coder: aDecoder)
 
+    }
+    
+    private func getAlbumArt(from link: String) {
+        albumCellViewModel.getAlbumArt(for: link) { (albumArt) in
+            DispatchQueue.main.async {
+                self.albumArtImageView.image = albumArt
+            }
+        }
     }
 }
