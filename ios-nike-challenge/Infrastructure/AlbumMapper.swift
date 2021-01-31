@@ -16,11 +16,13 @@ class AlbumMapper: Mapper {
         let albumArt = getString(from: json["artworkUrl100"])
         let itunesLink = getString(from: json["url"])
         let copyrightInfo = getString(from: json["copyright"])
+        let genres = getGenres(from: json["genres"])
+        
         
         return Album(name: name,
                      artist: artist,
                      albumArt: albumArt,
-                     genres: [],
+                     genres: genres,
                      releaseDate: releaseDate,
                      copyrightInfo: copyrightInfo,
                      itunesLink: itunesLink)
@@ -28,6 +30,18 @@ class AlbumMapper: Mapper {
     
     private func getString(from json: Any?) -> String {
         return json as? String ?? ""
+    }
+    
+    private func getGenres(from json: Any?) -> [Genre] {
+        
+        var genres = [Genre]()
+        
+        guard let jsonGenresArray = json as? [[String: Any]] else { return genres }
+        
+        for jsonGenre in jsonGenresArray {
+            genres.append(getString(from: jsonGenre["name"]))
+        }
+        return genres
     }
 }
 
