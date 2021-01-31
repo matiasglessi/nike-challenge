@@ -11,31 +11,45 @@ import XCTest
 class GetAlbumServiceTests: XCTestCase {
     
     private let apiClient = APIClientMock()
-    let failureAlbumArt = UIImage(systemName: "x.square.fill")
-    let successAlbumArt = UIImage(systemName: "x.circle.fill")
+    private let imageCache = ImageCacheMock()
+
+    private let failureAlbumArt = UIImage(systemName: "x.square.fill")
+    private let successAlbumArt = UIImage(systemName: "x.circle.fill")
     
     func test_onServiceExecutionWithSuccess_ThenReturnsSuccessfulResult() {
         
         apiClient.albumArtResult = .success(successAlbumArt)
-        let getAlbumArtService = GetAlbumArtServiceDefault(apiClient: apiClient)
+        let getAlbumArtService = getAlbumService()
         getAlbumArtService.execute(for: "", completion: { [weak self] (art) in
-            
             guard let strongSelf = self else { return }
             
             XCTAssertEqual(art, strongSelf.successAlbumArt)
         })
     }
     
-    
     func test_onServiceExecutionWithRandomFailure_ThenReturnsFailurefulResult() {
         apiClient.albumsResult = .failure(getRandomFailure())
-        let getAlbumArtService = GetAlbumArtServiceDefault(apiClient: apiClient)
+        let getAlbumArtService = getAlbumService()
         getAlbumArtService.execute(for: "", completion: { [weak self] (art) in
-            
             guard let strongSelf = self else { return }
             
             XCTAssertEqual(art, strongSelf.failureAlbumArt)
         })
+    }
+    
+    func test_whenAskingForAnAlreadyCachedImage_thenReturnsCachedImage() {
+        imageCache.saveImage(key: "123", image: successAlbumArt)
+        let getAlbumArtService = getAlbumService()
+        
+        getAlbumArtService.execute(for: "123", completion: { [weak self] (art) in
+            guard let strongSelf = self else { return }
+            
+            XCTAssertEqual(art, strongSelf.successAlbumArt)
+        })
+    }
+    
+    private func getAlbumService() -> GetAlbumArtService {
+        return GetAlbumArtServiceDefault(apiClient: apiClient, imageCache: imageCache)
     }
     
     private func getRandomFailure() -> APIClientError {

@@ -10,23 +10,31 @@ import UIKit
 class GetAlbumArtServiceDefault: GetAlbumArtService {
     
     private let apiClient: APIClient
+    private let imageCache: ImageCache
     
-    init(apiClient: APIClient) {
+    init(apiClient: APIClient, imageCache: ImageCache = DefaultImageCache()) {
         self.apiClient = apiClient
+        self.imageCache = imageCache
     }
     
     func execute(for albumArtLink: String, completion: @escaping (AlbumArt?) -> Void) {
         
-        apiClient.download(from: URL(string: albumArtLink)) { (result) in
-            
-            switch result {
-            
-            case .success(let albumArtImage):
-                completion(albumArtImage)
-            case .failure(_):
-                completion(UIImage(systemName: "x.square.fill"))
+        if let image = imageCache.getImage(key: albumArtLink) {
+            completion(image)
+        } else {
+            apiClient.download(from: URL(string: albumArtLink)) { [weak self] (result) in
+                
+                guard let strongSelf = self else { return }
+                
+                switch result {
+                
+                case .success(let albumArtImage):
+                    strongSelf.imageCache.saveImage(key: albumArtLink, image: albumArtImage)
+                    completion(albumArtImage)
+                case .failure(_):
+                    completion(UIImage(systemName: "x.square.fill"))
+                }
             }
         }
-        
     }
 }
