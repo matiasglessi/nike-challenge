@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6029732425C8300700678186 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6029732325C8300700678186 /* DetailViewModelTests.swift */; };
+		6029734E25C83A0D00678186 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6029734D25C83A0D00678186 /* UITableView+Extensions.swift */; };
 		6070824925C57ABE0065FB42 /* FeedViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */; };
 		6070824F25C57DD70065FB42 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070824E25C57DD70065FB42 /* AlbumService.swift */; };
 		6070825F25C57E250065FB42 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6070825E25C57E250065FB42 /* Album.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		6029732325C8300700678186 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		6029734D25C83A0D00678186 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelTests.swift; sourceTree = "<group>"; };
 		6070824E25C57DD70065FB42 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 		6070825E25C57E250065FB42 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				607082D025C6FBAF0065FB42 /* AlbumsTableViewCell.swift */,
+				6029734D25C83A0D00678186 /* UITableView+Extensions.swift */,
 				607082D525C6FF780065FB42 /* AlbumCellViewModel.swift */,
 				609086B525C4A82100AC64C0 /* FeedViewModel.swift */,
 				609086A125C4A15300AC64C0 /* FeedViewController.swift */,
@@ -466,6 +469,7 @@
 				6070827725C5AFEA0065FB42 /* Result.swift in Sources */,
 				6070827C25C5B2BE0065FB42 /* DefaultAlbumService.swift in Sources */,
 				6070829C25C5BB2F0065FB42 /* Mapper.swift in Sources */,
+				6029734E25C83A0D00678186 /* UITableView+Extensions.swift in Sources */,
 				609086BF25C4AB5A00AC64C0 /* AppCoordinator.swift in Sources */,
 				609086B625C4A82100AC64C0 /* FeedViewModel.swift in Sources */,
 				6070828F25C5B9BF0065FB42 /* URLSessionAPIClient.swift in Sources */,
