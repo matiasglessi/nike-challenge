@@ -9,7 +9,7 @@ import UIKit
 
 class AlbumsTableViewCell: UITableViewCell {
     
-    private var albumCellViewModel: AlbumCellViewModel!
+    private var albumCellViewModel: AlbumCellViewModel
     
     var album: Album? {
         didSet {

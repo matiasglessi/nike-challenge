@@ -23,18 +23,16 @@ class URLSessionAPIClientTests: XCTestCase {
     }
     
     func test_whenSessionHasDataAndNoError_ThenTheAlbumsAreRetrieved() {
-        session.data = Data()
-        mapper.album = albumMother.get()
+        let album = albumMother.withName("White Album").get()
+        session.data = jsonToData(with: album)
 
-        apiClient.get(from: fakeURL) { [weak self] (result) in
-            
-            guard let strongSelf = self else { return }
-            
+        apiClient.get(from: fakeURL) { (result) in
+
             switch result {
             case .success (let albums):
-                XCTAssertEqual(albums, [strongSelf.albumMother.get()])
+                XCTAssertEqual(albums, [album])
             default:
-                break
+                XCTFail()
             }
         }
     }
@@ -44,12 +42,39 @@ class URLSessionAPIClientTests: XCTestCase {
         apiClient.get(from: fakeURL, completion: { (result) in
             switch result {
             case .failure(let error):
-                XCTAssertEqual(error as! APIClientError, self.missingDataError)
+                
+                guard let error = error as? APIClientError else {
+                    XCTFail()
+                    return
+                }
+                XCTAssertEqual(error, self.missingDataError)
             default:
                 break
             }
         })
     }
+ 
+    func jsonToData(with album: Album) -> Data?{
+        
+        let json: [String : Any] = ["feed":
+                                        ["results": [
+                                            "name": album.name,
+                                            "artistName":album.artist,
+                                            "releaseDate":album.releaseDate,
+                                            "copyright":album.copyrightInfo,
+                                            "genres": album.genres,
+                                            "url":album.itunesLink,
+                                            "artworkUrl100":album.albumArt]
+                                        ]
+        ]
+        
+        do {
+            return try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+        } catch {
+            return nil
+        }
+    }
+    
 }
 
 

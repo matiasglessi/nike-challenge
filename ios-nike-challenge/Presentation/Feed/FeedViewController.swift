@@ -70,7 +70,9 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsTableViewCell.reuseIdentifier, for: indexPath) as! AlbumsTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumsTableViewCell.reuseIdentifier, for: indexPath) as? AlbumsTableViewCell else {
+            return UITableViewCell()
+        }
         cell.album = albums[indexPath.row]
         return cell
     }
