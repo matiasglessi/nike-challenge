@@ -10,6 +10,8 @@ import Foundation
 class FeedViewModel {
     private let albumService: AlbumService
     
+    var albumSelectedAction: (Album) -> () = { _ in }
+
     init(albumService: AlbumService) {
         self.albumService = albumService
     }
@@ -23,5 +25,9 @@ class FeedViewModel {
                 fatalError("Must implement error case!")
             }
         }
+    }
+    
+    func albumSelected(album: Album) {
+        albumSelectedAction(album)
     }
 }

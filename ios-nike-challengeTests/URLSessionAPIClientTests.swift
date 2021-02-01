@@ -15,7 +15,7 @@ class URLSessionAPIClientTests: XCTestCase {
     private let mapper = AlbumMapperMock()
   
     private let fakeURL = URL(string: "http://fake.url.com")
-    private let album = AlbumMother().get()
+    private let albumMother = AlbumMother()
     private let missingDataError = APIClientError.missingData
     
     override func setUp() {
@@ -24,7 +24,7 @@ class URLSessionAPIClientTests: XCTestCase {
     
     func test_whenSessionHasDataAndNoError_ThenTheAlbumsAreRetrieved() {
         session.data = Data()
-        mapper.album = album
+        mapper.album = albumMother.get()
 
         apiClient.get(from: fakeURL) { [weak self] (result) in
             
@@ -32,7 +32,7 @@ class URLSessionAPIClientTests: XCTestCase {
             
             switch result {
             case .success (let albums):
-                XCTAssertEqual(albums, [strongSelf.album])
+                XCTAssertEqual(albums, [strongSelf.albumMother.get()])
             default:
                 break
             }
