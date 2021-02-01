@@ -21,8 +21,8 @@ class FeedViewModel {
             switch result  {
             case .success(let albums):
                 completion(albums)
-            case .failure(let error):
-                fatalError("Must implement error case!")
+            case .failure(_):
+                completion([])
             }
         }
     }
