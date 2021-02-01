@@ -19,13 +19,6 @@ class AlbumsTableViewCell: UITableViewCell {
             artistNameLabel.text = album.artist
         }
     }
-
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
-        return view
-    }()
     
     let albumNameLabel: UILabel = {
         let label = UILabel()
@@ -53,30 +46,32 @@ class AlbumsTableViewCell: UITableViewCell {
         return img
     }()
     
+    let infoStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.clipsToBounds = true
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
     private func configureCellUI() {
         self.contentView.addSubview(albumArtImageView)
-        containerView.addSubview(albumNameLabel)
-        containerView.addSubview(artistNameLabel)
-        self.contentView.addSubview(containerView)
+        self.contentView.addSubview(infoStackView)
+        infoStackView.addArrangedSubview(albumNameLabel)
+        infoStackView.addArrangedSubview(artistNameLabel)
         
-        albumArtImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        albumArtImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant: 10).isActive = true
+        albumArtImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        albumArtImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
         albumArtImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         albumArtImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        containerView.leadingAnchor.constraint(equalTo:self.albumArtImageView.trailingAnchor, constant: 10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant: -10).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
-        albumNameLabel.topAnchor.constraint(equalTo:self.containerView.topAnchor).isActive = true
-        albumNameLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
-        albumNameLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
-        
-        artistNameLabel.topAnchor.constraint(equalTo:self.albumNameLabel.bottomAnchor).isActive = true
-        artistNameLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
-        artistNameLabel.topAnchor.constraint(equalTo:self.albumNameLabel.bottomAnchor).isActive = true
-        artistNameLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
+        infoStackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        infoStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        infoStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10).isActive = true
+
+        infoStackView.leadingAnchor.constraint(equalTo: albumArtImageView.trailingAnchor, constant: 10).isActive = true
+        infoStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
+
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

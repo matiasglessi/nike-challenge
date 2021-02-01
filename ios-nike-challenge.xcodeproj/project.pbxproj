@@ -138,29 +138,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6070824D25C57D980065FB42 /* Model */ = {
+		6029732B25C8350E00678186 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6070827625C5AFEA0065FB42 /* Result.swift */,
+				6070825E25C57E250065FB42 /* Album.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6029732F25C8354100678186 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				6070824E25C57DD70065FB42 /* AlbumService.swift */,
-				607082DA25C754D30065FB42 /* GetAlbumService.swift */,
-				607082DF25C755030065FB42 /* DefaultGetAlbumArtService.swift */,
 				607082F325C75D1D0065FB42 /* ImageCache.swift */,
-				6070827B25C5B2BE0065FB42 /* DefaultAlbumService.swift */,
-				6070825E25C57E250065FB42 /* Album.swift */,
-				6070827625C5AFEA0065FB42 /* Result.swift */,
-				6070828525C5B92D0065FB42 /* APIClient.swift */,
-				6070829625C5BAC10065FB42 /* Session.swift */,
 				6070829B25C5BB2F0065FB42 /* Mapper.swift */,
 			);
-			path = Model;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6029733025C8355B00678186 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				607082CB25C6EA380065FB42 /* AlbumMapper.swift */,
+				607082F825C75DA50065FB42 /* DefaultImageCache.swift */,
+				607082DA25C754D30065FB42 /* GetAlbumService.swift */,
+				607082DF25C755030065FB42 /* DefaultGetAlbumArtService.swift */,
+				6070827B25C5B2BE0065FB42 /* DefaultAlbumService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6029733125C8359C00678186 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6070828E25C5B9BF0065FB42 /* URLSessionAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6029733525C835B300678186 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6070828525C5B92D0065FB42 /* APIClient.swift */,
+				6070829625C5BAC10065FB42 /* Session.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6029733C25C835F500678186 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				6070828025C5B2F80065FB42 /* AlbumServiceTests.swift */,
+				607082EE25C758F30065FB42 /* GetAlbumServiceTests.swift */,
+				607082B725C6DDB30065FB42 /* URLSessionAPIClientTests.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		6029734325C8360C00678186 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */,
+				607082E425C755B30065FB42 /* AlbumCellViewModelTests.swift */,
+				6029732325C8300700678186 /* DetailViewModelTests.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6070824D25C57D980065FB42 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6029733525C835B300678186 /* Networking */,
+				6029732F25C8354100678186 /* Service */,
+				6029732B25C8350E00678186 /* Domain */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		6070828D25C5B9A70065FB42 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				6070828E25C5B9BF0065FB42 /* URLSessionAPIClient.swift */,
-				607082CB25C6EA380065FB42 /* AlbumMapper.swift */,
-				607082F825C75DA50065FB42 /* DefaultImageCache.swift */,
+				6029733025C8355B00678186 /* Service */,
+				6029733125C8359C00678186 /* Networking */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -226,7 +286,7 @@
 				6090866A25C484E800AC64C0 /* SceneDelegate.swift */,
 				609086BA25C4AB3F00AC64C0 /* Shared */,
 				609086AC25C4A3DE00AC64C0 /* Presentation */,
-				6070824D25C57D980065FB42 /* Model */,
+				6070824D25C57D980065FB42 /* Core */,
 				6070828D25C5B9A70065FB42 /* Infrastructure */,
 				6090867125C484EA00AC64C0 /* Assets.xcassets */,
 				6090867325C484EA00AC64C0 /* LaunchScreen.storyboard */,
@@ -239,12 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				6090868125C484EB00AC64C0 /* Info.plist */,
-				6070824825C57ABE0065FB42 /* FeedViewModelTests.swift */,
-				607082E425C755B30065FB42 /* AlbumCellViewModelTests.swift */,
-				6029732325C8300700678186 /* DetailViewModelTests.swift */,
-				6070828025C5B2F80065FB42 /* AlbumServiceTests.swift */,
-				607082EE25C758F30065FB42 /* GetAlbumServiceTests.swift */,
-				607082B725C6DDB30065FB42 /* URLSessionAPIClientTests.swift */,
+				6029734325C8360C00678186 /* Presentation */,
+				6029733C25C835F500678186 /* Infrastructure */,
 				607082B025C6DD990065FB42 /* Utilities */,
 			);
 			path = "ios-nike-challengeTests";

@@ -11,14 +11,28 @@ import XCTest
 class AlbumServiceTests: XCTestCase {
     
     private let apiClient = APIClientMock()
+    private let albumMother = AlbumMother()
     
-    func test_onServiceExecutionWithSuccess_ThenReturnsSuccessfulResult() {
+    func test_onServiceExecutionWithSuccessOfNoAlbums_ThenReturnsSuccessfulResultOfNoAlbums() {
         apiClient.albumsResult = .success([])
         let albumService = DefaultAlbumService(apiClient: apiClient)
         albumService.execute { (result) in
             switch result {
             case .success(let albums):
                 XCTAssertEqual(albums.count, 0)
+            case .failure(_):
+                XCTFail()
+            }
+        }
+    }
+    
+    func test_onServiceExecutionWithSuccessfulResponseOfAnAlbum_ThenReturnsSuccessfulResultOfAnAlbum() {
+        apiClient.albumsResult = .success([albumMother.get()])
+        let albumService = DefaultAlbumService(apiClient: apiClient)
+        albumService.execute { (result) in
+            switch result {
+            case .success(let albums):
+                XCTAssertEqual(albums.count, 1)
             case .failure(_):
                 XCTFail()
             }

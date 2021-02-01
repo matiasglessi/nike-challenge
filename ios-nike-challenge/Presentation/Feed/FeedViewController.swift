@@ -28,6 +28,9 @@ class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(AlbumsTableViewCell.self, forCellReuseIdentifier: "AlbumsTableViewCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100.0
+
 
         viewModel.getAlbums { [weak self] albums in
             guard let strongSelf = self else { return }
@@ -62,10 +65,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         cell.album = albums[indexPath.row]
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.albumSelected(album: albums[indexPath.row])
